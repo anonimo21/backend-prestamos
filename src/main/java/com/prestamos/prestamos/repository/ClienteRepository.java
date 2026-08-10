@@ -12,10 +12,10 @@ import java.util.Optional;
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
     
-    Optional<Cliente> findByDni(String dni);
+    Optional<Cliente> findByIdentificacion(String identificacion);
 
-    boolean existsByDni(String dni);
+    boolean existsByIdentificacion(String identificacion);
 
-    @Query("SELECT c FROM Cliente c WHERE LOWER(c.nombre) LIKE LOWER(CONCAT('%', :kw, '%')) OR LOWER(c.apellido) LIKE LOWER(CONCAT('%', :kw, '%')) OR c.dni LIKE CONCAT('%', :kw, '%')")
-    List<Cliente> buscarPorNombreApellidoODni(@Param("kw") String keyword);
+    @Query("SELECT c FROM Cliente c WHERE LOWER(c.nombre) LIKE LOWER(CONCAT('%', :kw, '%')) OR LOWER(c.apellido) LIKE LOWER(CONCAT('%', :kw, '%')) OR c.identificacion LIKE CONCAT('%', :kw, '%')")
+    List<Cliente> buscarPorNombreApellidoOIdentificacion(@Param("kw") String keyword);
 }

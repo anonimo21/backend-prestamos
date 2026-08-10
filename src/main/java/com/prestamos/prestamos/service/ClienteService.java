@@ -38,7 +38,7 @@ public class ClienteService {
         if (keyword == null || keyword.trim().isEmpty()) {
             clientes = clienteRepository.findAll();
         } else {
-            clientes = clienteRepository.buscarPorNombreApellidoODni(keyword.trim());
+            clientes = clienteRepository.buscarPorNombreApellidoOIdentificacion(keyword.trim());
         }
         return clientes.stream()
                 .map(clienteMapper::toResponseDTO)
@@ -53,8 +53,8 @@ public class ClienteService {
 
     @Transactional
     public ClienteResponseDTO crear(ClienteRequestDTO dto) {
-        if (clienteRepository.existsByDni(dto.getDni())) {
-            throw new DuplicateResourceException("Ya existe un cliente registrado con el DNI: " + dto.getDni());
+        if (clienteRepository.existsByIdentificacion(dto.getIdentificacion())) {
+            throw new DuplicateResourceException("Ya existe un cliente registrado con la identificación: " + dto.getIdentificacion());
         }
         Cliente cliente = clienteMapper.toEntity(dto);
         Cliente guardado = clienteRepository.save(cliente);
@@ -66,9 +66,9 @@ public class ClienteService {
         Cliente cliente = clienteRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Cliente no encontrado con ID: " + id));
 
-        if (!cliente.getDni().equalsIgnoreCase(dto.getDni())
-                && clienteRepository.existsByDni(dto.getDni())) {
-            throw new DuplicateResourceException("Ya existe otro cliente registrado con el DNI: " + dto.getDni());
+        if (!cliente.getIdentificacion().equalsIgnoreCase(dto.getIdentificacion())
+                && clienteRepository.existsByIdentificacion(dto.getIdentificacion())) {
+            throw new DuplicateResourceException("Ya existe otro cliente registrado con la identificación: " + dto.getIdentificacion());
         }
 
         clienteMapper.updateEntityFromDTO(cliente, dto);

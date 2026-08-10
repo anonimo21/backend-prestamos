@@ -11,7 +11,7 @@ public class ClienteMapper {
     public Cliente toEntity(ClienteRequestDTO dto) {
         if (dto == null) return null;
         Cliente cliente = new Cliente();
-        cliente.setDni(dto.getDni());
+        cliente.setIdentificacion(dto.getIdentificacion());
         cliente.setNombre(dto.getNombre());
         cliente.setApellido(dto.getApellido());
         cliente.setEmail(dto.getEmail());
@@ -24,7 +24,7 @@ public class ClienteMapper {
         if (cliente == null) return null;
         return ClienteResponseDTO.builder()
                 .id(cliente.getId())
-                .dni(cliente.getDni())
+                .identificacion(cliente.getIdentificacion())
                 .nombre(cliente.getNombre())
                 .apellido(cliente.getApellido())
                 .nombreCompleto(cliente.getNombreCompleto())
@@ -37,7 +37,7 @@ public class ClienteMapper {
 
     public void updateEntityFromDTO(Cliente cliente, ClienteRequestDTO dto) {
         if (cliente == null || dto == null) return;
-        cliente.setDni(dto.getDni());
+        cliente.setIdentificacion(dto.getIdentificacion());
         cliente.setNombre(dto.getNombre());
         cliente.setApellido(dto.getApellido());
         cliente.setEmail(dto.getEmail());

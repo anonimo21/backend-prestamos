@@ -14,9 +14,9 @@ import lombok.NoArgsConstructor;
 @Builder
 public class ClienteRequestDTO {
 
-    @NotBlank(message = "El DNI es obligatorio")
-    @Size(min = 6, max = 20, message = "El DNI debe tener entre 6 y 20 caracteres")
-    private String dni;
+    @NotBlank(message = "La identificación es obligatoria")
+    @Size(min = 6, max = 20, message = "La identificación debe tener entre 6 y 20 caracteres")
+    private String identificacion;
 
     @NotBlank(message = "El nombre es obligatorio")
     @Size(max = 100, message = "El nombre no puede tener más de 100 caracteres")
