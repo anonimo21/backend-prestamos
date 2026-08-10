@@ -1,0 +1,59 @@
+package com.prestamos.prestamos.controller;
+
+import com.prestamos.prestamos.dto.ApiResponse;
+import com.prestamos.prestamos.dto.ClienteRequestDTO;
+import com.prestamos.prestamos.dto.ClienteResponseDTO;
+import com.prestamos.prestamos.service.ClienteService;
+import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/v1/clientes")
+public class ClienteController {
+
+    private final ClienteService clienteService;
+
+    @Autowired
+    public ClienteController(ClienteService clienteService) {
+        this.clienteService = clienteService;
+    }
+
+    @GetMapping
+    public ResponseEntity<ApiResponse<List<ClienteResponseDTO>>> listar(
+            @RequestParam(name = "buscar", required = false) String buscar) {
+        List<ClienteResponseDTO> clientes = clienteService.buscarPorFiltro(buscar);
+        return ResponseEntity.ok(ApiResponse.ok(clientes, "Clientes recuperados exitosamente"));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ApiResponse<ClienteResponseDTO>> obtenerPorId(@PathVariable("id") Long id) {
+        ClienteResponseDTO cliente = clienteService.obtenerPorId(id);
+        return ResponseEntity.ok(ApiResponse.ok(cliente, "Cliente encontrado"));
+    }
+
+    @PostMapping
+    public ResponseEntity<ApiResponse<ClienteResponseDTO>> crear(@Valid @RequestBody ClienteRequestDTO dto) {
+        ClienteResponseDTO nuevoCliente = clienteService.crear(dto);
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(ApiResponse.created(nuevoCliente, "Cliente creado exitosamente"));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<ApiResponse<ClienteResponseDTO>> actualizar(
+            @PathVariable("id") Long id,
+            @Valid @RequestBody ClienteRequestDTO dto) {
+        ClienteResponseDTO actualizado = clienteService.actualizar(id, dto);
+        return ResponseEntity.ok(ApiResponse.ok(actualizado, "Cliente actualizado exitosamente"));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<ApiResponse<Void>> eliminar(@PathVariable("id") Long id) {
+        clienteService.eliminar(id);
+        return ResponseEntity.ok(ApiResponse.ok(null, "Cliente eliminado exitosamente"));
+    }
+}
