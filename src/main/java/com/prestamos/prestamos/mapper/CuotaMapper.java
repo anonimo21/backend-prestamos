@@ -1,7 +1,7 @@
 package com.prestamos.prestamos.mapper;
 
 import com.prestamos.prestamos.dto.CuotaResponseDTO;
-import com.prestamos.prestamos.model.Cuota;
+import com.prestamos.prestamos.domain.Cuota;
 import org.springframework.stereotype.Component;
 
 @Component

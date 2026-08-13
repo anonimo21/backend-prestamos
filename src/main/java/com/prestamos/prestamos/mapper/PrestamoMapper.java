@@ -2,7 +2,7 @@ package com.prestamos.prestamos.mapper;
 
 import com.prestamos.prestamos.dto.CuotaResponseDTO;
 import com.prestamos.prestamos.dto.PrestamoResponseDTO;
-import com.prestamos.prestamos.model.Prestamo;
+import com.prestamos.prestamos.domain.Prestamo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

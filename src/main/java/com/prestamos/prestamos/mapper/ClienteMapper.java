@@ -2,7 +2,7 @@ package com.prestamos.prestamos.mapper;
 
 import com.prestamos.prestamos.dto.ClienteRequestDTO;
 import com.prestamos.prestamos.dto.ClienteResponseDTO;
-import com.prestamos.prestamos.model.Cliente;
+import com.prestamos.prestamos.domain.Cliente;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,7 +1,7 @@
 package com.prestamos.prestamos.repository;
 
-import com.prestamos.prestamos.model.Cuota;
-import com.prestamos.prestamos.model.EstadoCuota;
+import com.prestamos.prestamos.domain.Cuota;
+import com.prestamos.prestamos.domain.EstadoCuota;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

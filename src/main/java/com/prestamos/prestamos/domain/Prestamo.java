@@ -1,4 +1,4 @@
-package com.prestamos.prestamos.model;
+package com.prestamos.prestamos.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -28,7 +28,7 @@ public class Prestamo {
     private Double monto;
 
     @Column(name = "tasa_interes", nullable = false)
-    private Double tasaInteres; // Porcentaje de interés (ej: 10.0 %)
+    private Double tasaInteres;
 
     @Column(name = "plazo_meses", nullable = false)
     private Integer plazoMeses;
