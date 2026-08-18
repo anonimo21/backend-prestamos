@@ -29,7 +29,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/prestamos")
 @Tag(name = "Préstamos", description = "Operaciones para gestionar préstamos: alta, consulta, actualización y eliminación.")
-public class PrestamoController {
+public class PrestamoController { 
 
     private final IPrestamoService prestamoService;
 
