@@ -1,8 +1,8 @@
 package com.prestamos.prestamos.controller;
 
+import com.prestamos.prestamos.domain.EstadoPrestamo;
 import com.prestamos.prestamos.dto.*;
-import com.prestamos.prestamos.model.EstadoPrestamo;
-import com.prestamos.prestamos.service.PrestamoService;
+import com.prestamos.prestamos.service.IPrestamoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,10 +15,10 @@ import java.util.List;
 @RequestMapping("/api/v1/prestamos")
 public class PrestamoController {
 
-    private final PrestamoService prestamoService;
+    private final IPrestamoService prestamoService;
 
     @Autowired
-    public PrestamoController(PrestamoService prestamoService) {
+    public PrestamoController(IPrestamoService prestamoService) {
         this.prestamoService = prestamoService;
     }
 

@@ -1,0 +1,686 @@
+2026-08-12 23:05:26.482 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - Starting PrestamosApplication using Java 21.0.8 with PID 97728 (/Users/edermontiel/Downloads/prestamos/target/classes started by edermontiel in /Users/edermontiel/Downloads/prestamos)
+2026-08-12 23:05:26.482 [restartedMain] DEBUG c.p.prestamos.PrestamosApplication - Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-08-12 23:05:26.482 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - No active profile set, falling back to 1 default profile: "default"
+2026-08-12 23:05:26.562 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-12 23:05:26.570 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6 ms. Found 3 JPA repository interfaces.
+2026-08-12 23:05:26.621 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-12 23:05:26.621 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-12 23:05:26.621 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2026-08-12 23:05:26.627 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-12 23:05:26.628 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 145 ms
+2026-08-12 23:05:26.666 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-12 23:05:26.667 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-08-12 23:05:26.670 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-12 23:05:26.671 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-57 - Starting...
+2026-08-12 23:05:26.684 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-57 - Added connection com.mysql.cj.jdbc.ConnectionImpl@36b7ffc0
+2026-08-12 23:05:26.684 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-57 - Start completed.
+2026-08-12 23:05:26.685 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-12 23:05:26.685 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-57)']
+	Database driver: undefined/unknown
+	Database version: 9.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-08-12 23:05:26.713 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-12 23:05:26.756 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-12 23:05:26.829 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-12 23:05:26.945 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/prestamos'
+2026-08-12 23:05:26.952 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-08-12 23:05:26.954 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-08-12 23:05:26.962 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-12 23:05:26.964 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - Started PrestamosApplication in 0.498 seconds (process running for 1020.31)
+2026-08-12 23:05:26.965 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-08-12 23:05:27.898 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-08-12 23:05:27.910 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - Starting PrestamosApplication using Java 25 with PID 72862 (/Users/edermontiel/Downloads/prestamos/target/classes started by edermontiel in /Users/edermontiel/Downloads/prestamos)
+2026-08-12 23:05:27.910 [restartedMain] DEBUG c.p.prestamos.PrestamosApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2026-08-12 23:05:27.911 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - The following 1 profile is active: "dev"
+2026-08-12 23:05:27.925 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-08-12 23:05:27.925 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-08-12 23:05:28.186 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springdoc.webmvc.ui.SwaggerConfig.springWebProvider
+2026-08-12 23:05:28.192 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-08-12 23:05:28.198 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Error processing condition on org.springdoc.webmvc.ui.SwaggerConfig.springWebProvider
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:183)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:429)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:789)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:607)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.prestamos.prestamos.PrestamosApplication.main(PrestamosApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springdoc.webmvc.ui.SwaggerConfig] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@7a8c5397]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360)
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:750)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1724)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:749)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:682)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:653)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:534)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:247)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:240)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:230)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:183)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:158)
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/web/servlet/resource/LiteWebJarsResourceResolver
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:962)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:144)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:776)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:691)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:620)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:578)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490)
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3010)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2329)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465)
+	... 36 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.web.servlet.resource.LiteWebJarsResourceResolver
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490)
+	... 48 common frames omitted
+2026-08-12 23:05:42.500 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 44 class path changes (6 additions, 1 deletion, 37 modifications)
+2026-08-12 23:05:42.513 [Thread-210] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-08-12 23:05:42.522 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-08-12 23:05:42.524 [Thread-210] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-12 23:05:42.526 [Thread-210] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-57 - Shutdown initiated...
+2026-08-12 23:05:42.544 [Thread-210] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-57 - Shutdown completed.
+2026-08-12 23:05:42.555 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-08-12 23:05:42.637 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - Starting PrestamosApplication using Java 25 with PID 73288 (/Users/edermontiel/Downloads/prestamos/target/classes started by edermontiel in /Users/edermontiel/Downloads/prestamos)
+2026-08-12 23:05:42.638 [restartedMain] DEBUG c.p.prestamos.PrestamosApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2026-08-12 23:05:42.638 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - The following 1 profile is active: "dev"
+2026-08-12 23:05:42.683 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-08-12 23:05:42.683 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-08-12 23:05:42.756 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - Starting PrestamosApplication using Java 21.0.8 with PID 97728 (/Users/edermontiel/Downloads/prestamos/target/classes started by edermontiel in /Users/edermontiel/Downloads/prestamos)
+2026-08-12 23:05:42.756 [restartedMain] DEBUG c.p.prestamos.PrestamosApplication - Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-08-12 23:05:42.756 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - No active profile set, falling back to 1 default profile: "default"
+2026-08-12 23:05:42.899 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-12 23:05:42.908 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 3 JPA repository interfaces.
+2026-08-12 23:05:42.997 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-12 23:05:42.998 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-12 23:05:42.998 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2026-08-12 23:05:43.020 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-12 23:05:43.020 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 263 ms
+2026-08-12 23:05:43.125 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-12 23:05:43.126 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-08-12 23:05:43.133 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-12 23:05:43.133 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-58 - Starting...
+2026-08-12 23:05:43.156 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-58 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6599d8c7
+2026-08-12 23:05:43.156 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-58 - Start completed.
+2026-08-12 23:05:43.159 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-12 23:05:43.159 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-58)']
+	Database driver: undefined/unknown
+	Database version: 9.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-08-12 23:05:43.223 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-12 23:05:43.275 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-12 23:05:43.391 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'clienteServiceImpl' defined in file [/Users/edermontiel/Downloads/prestamos/target/classes/com/prestamos/prestamos/service/ClienteServiceImpl.class]: Failed to instantiate [com.prestamos.prestamos.service.ClienteServiceImpl]: Constructor threw exception
+2026-08-12 23:05:43.391 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-12 23:05:43.391 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-58 - Shutdown initiated...
+2026-08-12 23:05:43.409 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-58 - Shutdown completed.
+2026-08-12 23:05:43.410 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-08-12 23:05:43.415 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-08-12 23:05:43.416 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'clienteServiceImpl' defined in file [/Users/edermontiel/Downloads/prestamos/target/classes/com/prestamos/prestamos/service/ClienteServiceImpl.class]: Failed to instantiate [com.prestamos.prestamos.service.ClienteServiceImpl]: Constructor threw exception
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1343)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1228)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1155)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1121)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1056)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.prestamos.prestamos.PrestamosApplication.main(PrestamosApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.prestamos.prestamos.service.ClienteServiceImpl]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:222)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:122)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1337)
+	... 22 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	The blank final field clienteRepository may not have been initialized
+	The blank final field clienteMapper may not have been initialized
+	Type mismatch: cannot convert from java.util.List<com.prestamos.prestamos.model.Cliente> to java.util.List<com.prestamos.prestamos.domain.Cliente>
+	The method map(Function<? super Cliente,? extends R>) in the type Stream<Cliente> is not applicable for the arguments (clienteMapper::toResponseDTO)
+	The type ClienteMapper does not define toResponseDTO(Cliente) that is applicable here
+	Type mismatch: cannot convert from com.prestamos.prestamos.model.Cliente to com.prestamos.prestamos.domain.Cliente
+	The method toResponseDTO(com.prestamos.prestamos.model.Cliente) in the type ClienteMapper is not applicable for the arguments (com.prestamos.prestamos.domain.Cliente)
+	Type mismatch: cannot convert from com.prestamos.prestamos.model.Cliente to com.prestamos.prestamos.domain.Cliente
+	The method save(S) in the type CrudRepository<Cliente,Long> is not applicable for the arguments (Cliente)
+	The method toResponseDTO(com.prestamos.prestamos.model.Cliente) in the type ClienteMapper is not applicable for the arguments (com.prestamos.prestamos.domain.Cliente)
+	Type mismatch: cannot convert from com.prestamos.prestamos.model.Cliente to com.prestamos.prestamos.domain.Cliente
+	The method updateEntityFromDTO(Cliente, ClienteRequestDTO) in the type ClienteMapper is not applicable for the arguments (ClienteRequestDTO, Cliente)
+	The method save(S) in the type CrudRepository<Cliente,Long> is not applicable for the arguments (Cliente)
+	The method toResponseDTO(com.prestamos.prestamos.model.Cliente) in the type ClienteMapper is not applicable for the arguments (com.prestamos.prestamos.domain.Cliente)
+	Type mismatch: cannot convert from com.prestamos.prestamos.model.Cliente to com.prestamos.prestamos.domain.Cliente
+	The method getPrestamos() is undefined for the type Cliente
+	The method getPrestamos() is undefined for the type Cliente
+	The method delete(com.prestamos.prestamos.model.Cliente) in the type CrudRepository<Cliente,Long> is not applicable for the arguments (com.prestamos.prestamos.domain.Cliente)
+
+	at com.prestamos.prestamos.service.ClienteServiceImpl.<init>(ClienteServiceImpl.java:20)
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:196)
+	... 24 common frames omitted
+2026-08-12 23:05:43.441 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-12 23:05:43.489 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44 ms. Found 3 JPA repository interfaces.
+2026-08-12 23:05:44.011 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-12 23:05:44.023 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-08-12 23:05:44.026 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-12 23:05:44.026 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-08-12 23:05:44.054 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-12 23:05:44.054 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1371 ms
+2026-08-12 23:05:44.146 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-12 23:05:44.437 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6c2789c6
+2026-08-12 23:05:44.439 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-12 23:05:44.446 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/prestamos'
+2026-08-12 23:05:44.642 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-12 23:05:44.691 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-08-12 23:05:44.715 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-08-12 23:05:44.844 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - Starting PrestamosApplication using Java 21.0.8 with PID 97728 (/Users/edermontiel/Downloads/prestamos/target/classes started by edermontiel in /Users/edermontiel/Downloads/prestamos)
+2026-08-12 23:05:44.844 [restartedMain] DEBUG c.p.prestamos.PrestamosApplication - Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-08-12 23:05:44.844 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - No active profile set, falling back to 1 default profile: "default"
+2026-08-12 23:05:44.932 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-12 23:05:44.997 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-12 23:05:45.005 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-12 23:05:45.006 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 3 JPA repository interfaces.
+2026-08-12 23:05:45.078 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-12 23:05:45.079 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-12 23:05:45.079 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2026-08-12 23:05:45.088 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-12 23:05:45.089 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 244 ms
+2026-08-12 23:05:45.157 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-12 23:05:45.158 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-08-12 23:05:45.163 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-12 23:05:45.164 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-59 - Starting...
+2026-08-12 23:05:45.183 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-59 - Added connection com.mysql.cj.jdbc.ConnectionImpl@44e8c612
+2026-08-12 23:05:45.183 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-59 - Start completed.
+2026-08-12 23:05:45.184 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-12 23:05:45.185 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-59)']
+	Database driver: undefined/unknown
+	Database version: 9.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-08-12 23:05:45.244 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-12 23:05:45.304 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-12 23:05:45.435 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'clienteServiceImpl' defined in file [/Users/edermontiel/Downloads/prestamos/target/classes/com/prestamos/prestamos/service/ClienteServiceImpl.class]: Failed to instantiate [com.prestamos.prestamos.service.ClienteServiceImpl]: Constructor threw exception
+2026-08-12 23:05:45.435 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-12 23:05:45.435 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-59 - Shutdown initiated...
+2026-08-12 23:05:45.450 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-59 - Shutdown completed.
+2026-08-12 23:05:45.452 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-08-12 23:05:45.457 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-08-12 23:05:45.465 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'clienteServiceImpl' defined in file [/Users/edermontiel/Downloads/prestamos/target/classes/com/prestamos/prestamos/service/ClienteServiceImpl.class]: Failed to instantiate [com.prestamos.prestamos.service.ClienteServiceImpl]: Constructor threw exception
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1343)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1228)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1155)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1121)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1056)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.prestamos.prestamos.PrestamosApplication.main(PrestamosApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.prestamos.prestamos.service.ClienteServiceImpl]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:222)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:122)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1337)
+	... 22 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	The blank final field clienteRepository may not have been initialized
+	The blank final field clienteMapper may not have been initialized
+	Type mismatch: cannot convert from java.util.List<com.prestamos.prestamos.model.Cliente> to java.util.List<com.prestamos.prestamos.domain.Cliente>
+	The method map(Function<? super Cliente,? extends R>) in the type Stream<Cliente> is not applicable for the arguments (clienteMapper::toResponseDTO)
+	The type ClienteMapper does not define toResponseDTO(Cliente) that is applicable here
+	Type mismatch: cannot convert from com.prestamos.prestamos.model.Cliente to com.prestamos.prestamos.domain.Cliente
+	The method toResponseDTO(com.prestamos.prestamos.model.Cliente) in the type ClienteMapper is not applicable for the arguments (com.prestamos.prestamos.domain.Cliente)
+	Type mismatch: cannot convert from com.prestamos.prestamos.model.Cliente to com.prestamos.prestamos.domain.Cliente
+	The method save(S) in the type CrudRepository<Cliente,Long> is not applicable for the arguments (Cliente)
+	The method toResponseDTO(com.prestamos.prestamos.model.Cliente) in the type ClienteMapper is not applicable for the arguments (com.prestamos.prestamos.domain.Cliente)
+	Type mismatch: cannot convert from com.prestamos.prestamos.model.Cliente to com.prestamos.prestamos.domain.Cliente
+	The method updateEntityFromDTO(Cliente, ClienteRequestDTO) in the type ClienteMapper is not applicable for the arguments (ClienteRequestDTO, Cliente)
+	The method save(S) in the type CrudRepository<Cliente,Long> is not applicable for the arguments (Cliente)
+	The method toResponseDTO(com.prestamos.prestamos.model.Cliente) in the type ClienteMapper is not applicable for the arguments (com.prestamos.prestamos.domain.Cliente)
+	Type mismatch: cannot convert from com.prestamos.prestamos.model.Cliente to com.prestamos.prestamos.domain.Cliente
+	The method getPrestamos() is undefined for the type Cliente
+	The method getPrestamos() is undefined for the type Cliente
+	The method delete(com.prestamos.prestamos.model.Cliente) in the type CrudRepository<Cliente,Long> is not applicable for the arguments (com.prestamos.prestamos.domain.Cliente)
+
+	at com.prestamos.prestamos.service.ClienteServiceImpl.<init>(ClienteServiceImpl.java:20)
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:196)
+	... 24 common frames omitted
+2026-08-12 23:05:45.921 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-12 23:05:46.006 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-12 23:05:46.229 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-08-12 23:05:46.554 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'clienteServiceImpl' defined in file [/Users/edermontiel/Downloads/prestamos/target/classes/com/prestamos/prestamos/service/ClienteServiceImpl.class]: Failed to instantiate [com.prestamos.prestamos.service.ClienteServiceImpl]: Constructor threw exception
+2026-08-12 23:05:46.554 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-12 23:05:46.556 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-12 23:05:46.566 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-12 23:05:46.568 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-08-12 23:05:46.580 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-08-12 23:05:46.589 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'clienteServiceImpl' defined in file [/Users/edermontiel/Downloads/prestamos/target/classes/com/prestamos/prestamos/service/ClienteServiceImpl.class]: Failed to instantiate [com.prestamos.prestamos.service.ClienteServiceImpl]: Constructor threw exception
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.prestamos.prestamos.PrestamosApplication.main(PrestamosApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.prestamos.prestamos.service.ClienteServiceImpl]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:221)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:94)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1331)
+	... 20 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	The blank final field clienteRepository may not have been initialized
+	The blank final field clienteMapper may not have been initialized
+	Type mismatch: cannot convert from java.util.List<com.prestamos.prestamos.model.Cliente> to java.util.List<com.prestamos.prestamos.domain.Cliente>
+	The method map(Function<? super Cliente,? extends R>) in the type Stream<Cliente> is not applicable for the arguments (clienteMapper::toResponseDTO)
+	The type ClienteMapper does not define toResponseDTO(Cliente) that is applicable here
+	Type mismatch: cannot convert from com.prestamos.prestamos.model.Cliente to com.prestamos.prestamos.domain.Cliente
+	The method toResponseDTO(com.prestamos.prestamos.model.Cliente) in the type ClienteMapper is not applicable for the arguments (com.prestamos.prestamos.domain.Cliente)
+	Type mismatch: cannot convert from com.prestamos.prestamos.model.Cliente to com.prestamos.prestamos.domain.Cliente
+	The method save(S) in the type CrudRepository<Cliente,Long> is not applicable for the arguments (Cliente)
+	The method toResponseDTO(com.prestamos.prestamos.model.Cliente) in the type ClienteMapper is not applicable for the arguments (com.prestamos.prestamos.domain.Cliente)
+	Type mismatch: cannot convert from com.prestamos.prestamos.model.Cliente to com.prestamos.prestamos.domain.Cliente
+	The method updateEntityFromDTO(Cliente, ClienteRequestDTO) in the type ClienteMapper is not applicable for the arguments (ClienteRequestDTO, Cliente)
+	The method save(S) in the type CrudRepository<Cliente,Long> is not applicable for the arguments (Cliente)
+	The method toResponseDTO(com.prestamos.prestamos.model.Cliente) in the type ClienteMapper is not applicable for the arguments (com.prestamos.prestamos.domain.Cliente)
+	Type mismatch: cannot convert from com.prestamos.prestamos.model.Cliente to com.prestamos.prestamos.domain.Cliente
+	The method getPrestamos() is undefined for the type Cliente
+	The method getPrestamos() is undefined for the type Cliente
+	The method delete(com.prestamos.prestamos.model.Cliente) in the type CrudRepository<Cliente,Long> is not applicable for the arguments (com.prestamos.prestamos.domain.Cliente)
+
+	at com.prestamos.prestamos.service.ClienteServiceImpl.<init>(ClienteServiceImpl.java:20)
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:195)
+	... 22 common frames omitted
+2026-08-12 23:06:03.265 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - Starting PrestamosApplication using Java 21.0.8 with PID 97728 (/Users/edermontiel/Downloads/prestamos/target/classes started by edermontiel in /Users/edermontiel/Downloads/prestamos)
+2026-08-12 23:06:03.266 [restartedMain] DEBUG c.p.prestamos.PrestamosApplication - Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-08-12 23:06:03.266 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - No active profile set, falling back to 1 default profile: "default"
+2026-08-12 23:06:03.878 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-12 23:06:03.892 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 3 JPA repository interfaces.
+2026-08-12 23:06:04.068 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-12 23:06:04.071 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-12 23:06:04.072 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2026-08-12 23:06:04.087 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-12 23:06:04.088 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 816 ms
+2026-08-12 23:06:04.228 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-12 23:06:04.230 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-08-12 23:06:04.243 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-12 23:06:04.244 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-60 - Starting...
+2026-08-12 23:06:04.371 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-60 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1f3e913d
+2026-08-12 23:06:04.375 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-60 - Start completed.
+2026-08-12 23:06:04.379 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-12 23:06:04.379 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-60)']
+	Database driver: undefined/unknown
+	Database version: 9.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-08-12 23:06:04.461 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-12 23:06:04.576 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-12 23:06:04.740 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-12 23:06:04.953 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/prestamos'
+2026-08-12 23:06:04.965 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-08-12 23:06:04.968 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-08-12 23:06:04.982 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-12 23:06:04.988 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - Started PrestamosApplication in 1.825 seconds (process running for 1058.333)
+2026-08-12 23:06:04.990 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-08-12 23:06:11.439 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 44 class path changes (0 additions, 42 deletions, 2 modifications)
+2026-08-12 23:06:11.463 [Thread-214] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-08-12 23:06:11.469 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-08-12 23:06:11.488 [Thread-214] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-12 23:06:11.502 [Thread-214] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-60 - Shutdown initiated...
+2026-08-12 23:06:11.569 [Thread-214] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-60 - Shutdown completed.
+2026-08-12 23:06:12.522 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - Starting PrestamosApplication using Java 21.0.8 with PID 97728 (/Users/edermontiel/Downloads/prestamos/target/classes started by edermontiel in /Users/edermontiel/Downloads/prestamos)
+2026-08-12 23:06:12.523 [restartedMain] DEBUG c.p.prestamos.PrestamosApplication - Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-08-12 23:06:12.523 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - No active profile set, falling back to 1 default profile: "default"
+2026-08-12 23:06:12.760 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-12 23:06:12.762 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2026-08-12 23:06:12.860 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-12 23:06:12.861 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-12 23:06:12.862 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2026-08-12 23:06:12.872 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-12 23:06:12.872 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 346 ms
+2026-08-12 23:06:12.999 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-12 23:06:13.001 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-08-12 23:06:13.007 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-12 23:06:13.008 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-61 - Starting...
+2026-08-12 23:06:13.033 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-61 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2613cd0a
+2026-08-12 23:06:13.033 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-61 - Start completed.
+2026-08-12 23:06:13.036 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-12 23:06:13.037 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-61)']
+	Database driver: undefined/unknown
+	Database version: 9.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-08-12 23:06:13.051 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-12 23:06:13.051 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-12 23:06:13.099 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-12 23:06:13.394 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/prestamos'
+2026-08-12 23:06:13.418 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-08-12 23:06:13.424 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-08-12 23:06:13.442 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-12 23:06:13.449 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - Started PrestamosApplication in 0.992 seconds (process running for 1066.793)
+2026-08-12 23:06:13.450 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-08-12 23:06:15.448 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 32 class path changes (32 additions, 0 deletions, 0 modifications)
+2026-08-12 23:06:15.584 [Thread-224] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-08-12 23:06:15.604 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-08-12 23:06:15.624 [Thread-224] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-12 23:06:15.632 [Thread-224] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-61 - Shutdown initiated...
+2026-08-12 23:06:15.686 [Thread-224] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-61 - Shutdown completed.
+2026-08-12 23:06:16.456 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - Starting PrestamosApplication using Java 21.0.8 with PID 97728 (/Users/edermontiel/Downloads/prestamos/target/classes started by edermontiel in /Users/edermontiel/Downloads/prestamos)
+2026-08-12 23:06:16.457 [restartedMain] DEBUG c.p.prestamos.PrestamosApplication - Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-08-12 23:06:16.457 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - No active profile set, falling back to 1 default profile: "default"
+2026-08-12 23:06:16.736 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-12 23:06:16.750 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 3 JPA repository interfaces.
+2026-08-12 23:06:16.939 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-12 23:06:16.940 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-12 23:06:16.941 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2026-08-12 23:06:16.952 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-12 23:06:16.953 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 494 ms
+2026-08-12 23:06:16.997 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-08-12 23:06:17.064 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - Starting PrestamosApplication using Java 25 with PID 74014 (/Users/edermontiel/Downloads/prestamos/target/classes started by edermontiel in /Users/edermontiel/Downloads/prestamos)
+2026-08-12 23:06:17.065 [restartedMain] DEBUG c.p.prestamos.PrestamosApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2026-08-12 23:06:17.065 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - The following 1 profile is active: "dev"
+2026-08-12 23:06:17.108 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-12 23:06:17.112 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-08-12 23:06:17.123 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-12 23:06:17.125 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-62 - Starting...
+2026-08-12 23:06:17.133 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-08-12 23:06:17.133 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-08-12 23:06:17.178 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-62 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1bc7f033
+2026-08-12 23:06:17.178 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-62 - Start completed.
+2026-08-12 23:06:17.182 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-12 23:06:17.183 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-62)']
+	Database driver: undefined/unknown
+	Database version: 9.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-08-12 23:06:17.402 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-12 23:06:17.506 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-12 23:06:17.707 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-12 23:06:18.054 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/prestamos'
+2026-08-12 23:06:18.073 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-08-12 23:06:18.077 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-08-12 23:06:18.094 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-12 23:06:18.099 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - Started PrestamosApplication in 1.67 seconds (process running for 1071.444)
+2026-08-12 23:06:18.100 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-08-12 23:06:18.321 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-12 23:06:18.357 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 3 JPA repository interfaces.
+2026-08-12 23:06:18.826 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-12 23:06:18.833 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-08-12 23:06:18.835 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-12 23:06:18.836 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-08-12 23:06:18.858 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-12 23:06:18.858 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1724 ms
+2026-08-12 23:06:18.935 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-12 23:06:19.171 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@296a9b4d
+2026-08-12 23:06:19.171 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-12 23:06:19.177 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/prestamos'
+2026-08-12 23:06:19.274 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-12 23:06:19.306 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-08-12 23:06:19.325 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-08-12 23:06:19.475 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-12 23:06:19.518 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-12 23:06:20.089 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-12 23:06:20.159 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-12 23:06:20.329 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-08-12 23:06:20.710 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-12 23:06:21.689 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2026-08-12 23:06:21.701 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-08-12 23:06:21.773 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-08-12 23:06:21.779 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-08-12 23:06:21.782 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-12 23:06:21.786 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-12 23:06:21.814 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-12 23:06:21.846 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-08-12 23:06:21.865 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
+2026-08-12 23:06:34.102 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-08-12 23:06:34.121 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - Starting PrestamosApplication using Java 25 with PID 74581 (/Users/edermontiel/Downloads/prestamos/target/classes started by edermontiel in /Users/edermontiel/Downloads/prestamos)
+2026-08-12 23:06:34.122 [restartedMain] DEBUG c.p.prestamos.PrestamosApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2026-08-12 23:06:34.122 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - The following 1 profile is active: "dev"
+2026-08-12 23:06:34.146 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-08-12 23:06:34.146 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-08-12 23:06:34.685 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-12 23:06:34.716 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 3 JPA repository interfaces.
+2026-08-12 23:06:35.143 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-12 23:06:35.151 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-08-12 23:06:35.154 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-12 23:06:35.154 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-08-12 23:06:35.184 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-12 23:06:35.184 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1037 ms
+2026-08-12 23:06:35.366 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-12 23:06:37.052 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@45d0c1f1
+2026-08-12 23:06:37.058 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-12 23:06:37.079 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/prestamos'
+2026-08-12 23:06:37.697 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-12 23:06:37.891 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-08-12 23:06:37.945 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-08-12 23:06:38.224 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-12 23:06:38.288 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-12 23:06:38.928 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-12 23:06:39.014 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-12 23:06:39.198 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-08-12 23:06:39.587 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-12 23:06:39.995 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-08-12 23:06:40.001 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-08-12 23:06:40.040 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-08-12 23:06:40.049 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-12 23:06:40.059 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - Started PrestamosApplication in 6.174 seconds (process running for 6.368)
+2026-08-12 23:06:42.508 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-12 23:06:42.508 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-12 23:06:42.509 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-08-12 23:07:06.926 [http-nio-8081-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.prestamos.prestamos.exception.DuplicateResourceException: Ya existe un cliente registrado con la identificación: 123456789]
+2026-08-12 23:07:08.595 [http-nio-8081-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.prestamos.prestamos.exception.DuplicateResourceException: Ya existe un cliente registrado con la identificación: 123456789]
+2026-08-12 23:07:09.170 [http-nio-8081-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.prestamos.prestamos.exception.DuplicateResourceException: Ya existe un cliente registrado con la identificación: 123456789]
+2026-08-12 23:07:09.552 [http-nio-8081-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.prestamos.prestamos.exception.DuplicateResourceException: Ya existe un cliente registrado con la identificación: 123456789]
+2026-08-12 23:08:58.711 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 30 class path changes (0 additions, 28 deletions, 2 modifications)
+2026-08-12 23:08:58.734 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2026-08-12 23:08:58.754 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-12 23:08:58.762 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-12 23:08:58.785 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-12 23:08:58.871 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - Starting PrestamosApplication using Java 25 with PID 74581 (/Users/edermontiel/Downloads/prestamos/target/classes started by edermontiel in /Users/edermontiel/Downloads/prestamos)
+2026-08-12 23:08:58.871 [restartedMain] DEBUG c.p.prestamos.PrestamosApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2026-08-12 23:08:58.871 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - The following 1 profile is active: "dev"
+2026-08-12 23:08:59.054 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-12 23:08:59.061 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 3 JPA repository interfaces.
+2026-08-12 23:08:59.182 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-12 23:08:59.183 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-08-12 23:08:59.184 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-12 23:08:59.184 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-08-12 23:08:59.192 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-12 23:08:59.192 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 319 ms
+2026-08-12 23:08:59.231 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-08-12 23:08:59.263 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@483dce
+2026-08-12 23:08:59.263 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-08-12 23:08:59.263 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/prestamos'
+2026-08-12 23:08:59.304 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-12 23:08:59.305 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-08-12 23:08:59.310 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-12 23:08:59.313 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-12 23:08:59.375 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-12 23:08:59.424 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-12 23:08:59.567 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-12 23:08:59.797 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-08-12 23:08:59.801 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-08-12 23:08:59.817 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-08-12 23:08:59.821 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-12 23:08:59.827 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - Started PrestamosApplication in 0.975 seconds (process running for 146.135)
+2026-08-12 23:08:59.830 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-08-12 23:09:01.214 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 31 class path changes (31 additions, 0 deletions, 0 modifications)
+2026-08-12 23:09:01.216 [Thread-7] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2026-08-12 23:09:01.220 [Thread-7] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-12 23:09:01.221 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-08-12 23:09:01.229 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2026-08-12 23:09:01.282 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - Starting PrestamosApplication using Java 25 with PID 74581 (/Users/edermontiel/Downloads/prestamos/target/classes started by edermontiel in /Users/edermontiel/Downloads/prestamos)
+2026-08-12 23:09:01.282 [restartedMain] DEBUG c.p.prestamos.PrestamosApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2026-08-12 23:09:01.282 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - The following 1 profile is active: "dev"
+2026-08-12 23:09:01.354 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-12 23:09:01.357 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3 ms. Found 3 JPA repository interfaces.
+2026-08-12 23:09:01.400 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-12 23:09:01.400 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-08-12 23:09:01.400 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-12 23:09:01.400 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-08-12 23:09:01.404 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-12 23:09:01.404 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 121 ms
+2026-08-12 23:09:01.424 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2026-08-12 23:09:01.440 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@139f0ce5
+2026-08-12 23:09:01.441 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2026-08-12 23:09:01.441 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/prestamos'
+2026-08-12 23:09:01.461 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-12 23:09:01.462 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-08-12 23:09:01.464 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-12 23:09:01.465 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-12 23:09:01.489 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-12 23:09:01.527 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-12 23:09:01.593 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-12 23:09:01.704 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-08-12 23:09:01.706 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-08-12 23:09:01.716 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-08-12 23:09:01.716 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-12 23:09:01.720 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - Started PrestamosApplication in 0.449 seconds (process running for 148.028)
+2026-08-12 23:09:01.721 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-08-12 23:09:08.161 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-08-12 23:09:08.171 [Thread-11] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2026-08-12 23:09:08.175 [Thread-11] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-12 23:09:08.176 [Thread-11] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2026-08-12 23:09:08.187 [Thread-11] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2026-08-12 23:09:08.257 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - Starting PrestamosApplication using Java 25 with PID 74581 (/Users/edermontiel/Downloads/prestamos/target/classes started by edermontiel in /Users/edermontiel/Downloads/prestamos)
+2026-08-12 23:09:08.257 [restartedMain] DEBUG c.p.prestamos.PrestamosApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2026-08-12 23:09:08.257 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - The following 1 profile is active: "dev"
+2026-08-12 23:09:08.369 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-12 23:09:08.378 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 3 JPA repository interfaces.
+2026-08-12 23:09:08.435 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-12 23:09:08.435 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-08-12 23:09:08.436 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-12 23:09:08.436 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-08-12 23:09:08.439 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-12 23:09:08.439 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 180 ms
+2026-08-12 23:09:08.468 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+2026-08-12 23:09:08.493 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6b7df187
+2026-08-12 23:09:08.493 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+2026-08-12 23:09:08.494 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/prestamos'
+2026-08-12 23:09:08.574 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-12 23:09:08.575 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-08-12 23:09:08.581 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-12 23:09:08.583 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-12 23:09:08.654 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-12 23:09:08.712 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-12 23:09:08.801 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-12 23:09:08.941 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-08-12 23:09:08.944 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-08-12 23:09:08.955 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-08-12 23:09:08.956 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-12 23:09:08.959 [restartedMain] INFO  c.p.prestamos.PrestamosApplication - Started PrestamosApplication in 0.716 seconds (process running for 155.267)
+2026-08-12 23:09:08.960 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-08-12 23:09:22.028 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-12 23:09:22.029 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+2026-08-12 23:09:22.044 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.

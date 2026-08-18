@@ -1,6 +1,6 @@
 package com.prestamos.prestamos.dto;
 
-import com.prestamos.prestamos.model.EstadoPrestamo;
+import com.prestamos.prestamos.domain.EstadoPrestamo;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

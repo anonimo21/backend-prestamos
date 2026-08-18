@@ -3,7 +3,7 @@ package com.prestamos.prestamos.controller;
 import com.prestamos.prestamos.dto.ApiResponse;
 import com.prestamos.prestamos.dto.ClienteRequestDTO;
 import com.prestamos.prestamos.dto.ClienteResponseDTO;
-import com.prestamos.prestamos.service.ClienteService;
+import com.prestamos.prestamos.service.IClienteService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,10 +17,10 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:4200")
 public class ClienteController {
 
-    private final ClienteService clienteService;
+    private final IClienteService clienteService;
 
     @Autowired
-    public ClienteController(ClienteService clienteService) {
+    public ClienteController(IClienteService clienteService) {
         this.clienteService = clienteService;
     }
 

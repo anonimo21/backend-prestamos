@@ -1,4 +1,4 @@
-package com.prestamos.prestamos.model;
+package com.prestamos.prestamos.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

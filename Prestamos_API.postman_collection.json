@@ -1,0 +1,309 @@
+{
+  "info": {
+    "_postman_id": "prestamos-api-collection",
+    "name": "Prestamos API",
+    "description": "Colección de endpoints para la API de Gestión de Préstamos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Clientes",
+      "item": [
+        {
+          "name": "Listar todos los clientes",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8081/api/v1/clientes",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "v1", "clientes"]
+            },
+            "description": "Obtiene la lista de todos los clientes registrados"
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar clientes por filtro",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8081/api/v1/clientes?buscar=Juan",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "v1", "clientes"],
+              "query": [
+                {
+                  "key": "buscar",
+                  "value": "Juan",
+                  "description": "Buscar por nombre, apellido o identificación"
+                }
+              ]
+            },
+            "description": "Busca clientes por nombre, apellido o identificación"
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener cliente por ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8081/api/v1/clientes/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "v1", "clientes", "1"]
+            },
+            "description": "Obtiene un cliente específico por su ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Crear nuevo cliente",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"identificacion\": \"123456789\",\n  \"nombre\": \"Juan\",\n  \"apellido\": \"Pérez\",\n  \"email\": \"juan.perez@email.com\",\n  \"telefono\": \"+34 600 123 456\",\n  \"direccion\": \"Calle Principal 123, Madrid\",\n  \"ciudad\": \"Madrid\",\n  \"codigoPostal\": \"28001\",\n  \"pais\": \"España\",\n  \"fechaNacimiento\": \"1990-01-15\",\n  \"ingresoMensual\": 3000.0,\n  \"ocupacion\": \"Ingeniero\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/v1/clientes",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "v1", "clientes"]
+            },
+            "description": "Crea un nuevo cliente en el sistema"
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar cliente",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"identificacion\": \"123456789\",\n  \"nombre\": \"Juan Carlos\",\n  \"apellido\": \"Pérez García\",\n  \"email\": \"juancarlos.perez@email.com\",\n  \"telefono\": \"+34 600 987 654\",\n  \"direccion\": \"Calle Principal 456, Madrid\",\n  \"ciudad\": \"Madrid\",\n  \"codigoPostal\": \"28002\",\n  \"pais\": \"España\",\n  \"fechaNacimiento\": \"1990-01-15\",\n  \"ingresoMensual\": 3500.0,\n  \"ocupacion\": \"Ingeniero Senior\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/v1/clientes/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "v1", "clientes", "1"]
+            },
+            "description": "Actualiza los datos de un cliente existente"
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar cliente",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8081/api/v1/clientes/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "v1", "clientes", "1"]
+            },
+            "description": "Elimina un cliente del sistema (solo si no tiene préstamos)"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Préstamos",
+      "item": [
+        {
+          "name": "Listar todos los préstamos",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8081/api/v1/prestamos",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "v1", "prestamos"]
+            },
+            "description": "Obtiene la lista de todos los préstamos registrados"
+          },
+          "response": []
+        },
+        {
+          "name": "Listar préstamos por estado",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8081/api/v1/prestamos?estado=PENDIENTE",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "v1", "prestamos"],
+              "query": [
+                {
+                  "key": "estado",
+                  "value": "PENDIENTE",
+                  "description": "Estados disponibles: PENDIENTE, APROBADO, RECHAZADO, PAGADO, VENCIDO"
+                }
+              ]
+            },
+            "description": "Obtiene préstamos filtrados por estado. Estados: PENDIENTE, APROBADO, RECHAZADO, PAGADO, VENCIDO"
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener préstamo por ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8081/api/v1/prestamos/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "v1", "prestamos", "1"]
+            },
+            "description": "Obtiene los detalles de un préstamo específico incluidas sus cuotas"
+          },
+          "response": []
+        },
+        {
+          "name": "Crear nuevo préstamo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clienteId\": 1,\n  \"monto\": 10000.0,\n  \"tasaInteres\": 5.5,\n  \"plazoMeses\": 12\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/v1/prestamos",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "v1", "prestamos"]
+            },
+            "description": "Crea un nuevo préstamo y genera automáticamente las cuotas mensuales"
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar préstamo",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clienteId\": 1,\n  \"monto\": 12000.0,\n  \"tasaInteres\": 4.8,\n  \"plazoMeses\": 24\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/v1/prestamos/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "v1", "prestamos", "1"]
+            },
+            "description": "Actualiza los datos de un préstamo existente"
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar préstamo",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8081/api/v1/prestamos/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "v1", "prestamos", "1"]
+            },
+            "description": "Elimina un préstamo del sistema"
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8081",
+      "type": "string"
+    }
+  ]
+}
