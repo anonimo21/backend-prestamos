@@ -7,6 +7,15 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
+/**
+ * Entidad que representa una cuota individual de un préstamo.
+ *
+ * <p>Mapea la tabla {@code cuotas} y almacena el número de cuota, el
+ * monto a pagar, la fecha de vencimiento, el estado actual
+ * ({@link EstadoCuota}) y la fecha en la que fue pagada (si aplica).
+ * Al persistirse, si el estado es {@code null}, se asigna
+ * {@link EstadoCuota#PENDIENTE} por defecto.</p>
+ */
 @Entity
 @Table(name = "cuotas")
 @Data
@@ -38,6 +47,13 @@ public class Cuota {
     @Column(name = "fecha_pago")
     private LocalDate fechaPago;
 
+    /**
+     * Hook del ciclo de vida JPA que se ejecuta antes de persistir la entidad.
+     *
+     * <p>Inicializa el estado en {@link EstadoCuota#PENDIENTE} cuando aún
+     * no fue establecido, garantizando que cada cuota nueva nazca como
+     * pendiente de pago.</p>
+     */
     @PrePersist
     public void prePersist() {
         if (this.estado == null) {

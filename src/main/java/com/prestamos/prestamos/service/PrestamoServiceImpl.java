@@ -22,6 +22,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Implementación de {@link IPrestamoService}.
+ *
+ * <p>Es el corazón de la lógica de préstamos: arma el cálculo del
+ * interés total, la cuota mensual (redondeada a 2 decimales) y
+ * genera el plan de cuotas a partir de los datos del DTO.</p>
+ */
 @Service
 public class PrestamoServiceImpl implements IPrestamoService {
 
@@ -31,6 +38,13 @@ public class PrestamoServiceImpl implements IPrestamoService {
     private final ClienteRepository clienteRepository;
     private final PrestamoMapper prestamoMapper;
 
+    /**
+     * Constructor con inyección de dependencias.
+     *
+     * @param prestamoRepository repositorio de préstamos.
+     * @param clienteRepository  repositorio de clientes.
+     * @param prestamoMapper     mapper entre entidad y DTO de préstamo.
+     */
     public PrestamoServiceImpl(PrestamoRepository prestamoRepository,
                                ClienteRepository clienteRepository,
                                PrestamoMapper prestamoMapper) {
@@ -39,6 +53,11 @@ public class PrestamoServiceImpl implements IPrestamoService {
         this.prestamoMapper = prestamoMapper;
     }
 
+    /**
+     * Lista todos los préstamos registrados.
+     *
+     * @return lista de préstamos mapeados a DTO.
+     */
     @Override
     @Transactional(readOnly = true)
     public List<PrestamoResponseDTO> listarTodos() {
@@ -47,6 +66,16 @@ public class PrestamoServiceImpl implements IPrestamoService {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Filtra los préstamos por estado.
+     *
+     * <p>Trae todos los préstamos y aplica el filtro en memoria; podría
+     * reemplazarse por el método {@code findByEstado} del repositorio
+     * para una implementación más eficiente.</p>
+     *
+     * @param estado estado por el que filtrar.
+     * @return lista de préstamos con ese estado.
+     */
     @Override
     @Transactional(readOnly = true)
     public List<PrestamoResponseDTO> listarPorEstado(EstadoPrestamo estado) {
@@ -56,6 +85,13 @@ public class PrestamoServiceImpl implements IPrestamoService {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Obtiene un préstamo por id.
+     *
+     * @param id identificador del préstamo.
+     * @return el préstamo encontrado.
+     * @throws ResourceNotFoundException si no existe.
+     */
     @Override
     @Transactional(readOnly = true)
     public PrestamoResponseDTO obtenerPorId(Long id) {
@@ -64,6 +100,25 @@ public class PrestamoServiceImpl implements IPrestamoService {
         return prestamoMapper.toResponseDTO(p);
     }
 
+    /**
+     * Crea un préstamo y su plan de cuotas asociado.
+     *
+     * <p>El algoritmo:</p>
+     * <ol>
+     *   <li>Busca al cliente (lanza 404 si no existe).</li>
+     *   <li>Calcula el interés total como {@code monto * (tasa/100)}.</li>
+     *   <li>Calcula el monto total a devolver = {@code monto + interés}.</li>
+     *   <li>Calcula la cuota mensual redondeada a 2 decimales.</li>
+     *   <li>Genera {@code plazoMeses} cuotas con vencimiento mensual.
+     *       La última cuota absorbe los redondeos previos para que la
+     *       suma coincida exactamente con {@code montoTotal}.</li>
+     *   <li>Persiste el préstamo y todas sus cuotas.</li>
+     * </ol>
+     *
+     * @param dto datos del préstamo a crear.
+     * @return el préstamo persistido con su plan de cuotas.
+     * @throws ResourceNotFoundException si el cliente no existe.
+     */
     @Override
     @Transactional
     public PrestamoResponseDTO crear(PrestamoRequestDTO dto) {
@@ -113,6 +168,15 @@ public class PrestamoServiceImpl implements IPrestamoService {
         return prestamoMapper.toResponseDTO(guardado);
     }
 
+    /**
+     * Actualiza los datos de un préstamo y recalcula monto total, cuota
+     * mensual y las cuotas asociadas.
+     *
+     * @param id  identificador del préstamo a actualizar.
+     * @param dto nuevos valores.
+     * @return el préstamo actualizado.
+     * @throws ResourceNotFoundException si el préstamo o el cliente no existen.
+     */
     @Override
     @Transactional
     public PrestamoResponseDTO actualizar(Long id, PrestamoRequestDTO dto) {
@@ -138,6 +202,12 @@ public class PrestamoServiceImpl implements IPrestamoService {
         return prestamoMapper.toResponseDTO(actualizado);
     }
 
+    /**
+     * Elimina un préstamo del sistema.
+     *
+     * @param id identificador del préstamo a eliminar.
+     * @throws ResourceNotFoundException si no existe.
+     */
     @Override
     @Transactional
     public void eliminar(Long id) {
