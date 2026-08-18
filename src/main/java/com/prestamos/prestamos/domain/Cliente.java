@@ -9,6 +9,13 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Entidad que representa a un cliente del sistema de préstamos.
+ *
+ * <p>Mapea la tabla {@code clientes} y mantiene la información personal
+ * junto con la lista de préstamos asociados. La fecha de registro se
+ * asigna automáticamente al persistir la entidad por primera vez.</p>
+ */
 @Entity
 @Table(name = "clientes")
 @Data
@@ -44,6 +51,13 @@ public class Cliente {
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Prestamo> prestamos = new ArrayList<>();
 
+    /**
+     * Hook del ciclo de vida JPA que se ejecuta antes de persistir la entidad.
+     *
+     * <p>Si la fecha de registro aún no fue establecida, se inicializa con
+     * la fecha y hora actuales. Esto garantiza que {@code fechaRegistro}
+     * siempre tenga un valor al guardar el cliente.</p>
+     */
     @PrePersist
     public void prePersist() {
         if (this.fechaRegistro == null) {
@@ -51,6 +65,14 @@ public class Cliente {
         }
     }
 
+    /**
+     * Devuelve el nombre completo del cliente concatenando nombre y apellido.
+     *
+     * <p>Si alguno de los dos campos es {@code null}, se reemplaza por una
+     * cadena vacía para evitar un valor literal {@code "null"} en la salida.</p>
+     *
+     * @return nombre completo del cliente (ej.: "Juan Pérez").
+     */
     public String getNombreCompleto() {
         return (nombre != null ? nombre : "") + " " + (apellido != null ? apellido : "");
     }
