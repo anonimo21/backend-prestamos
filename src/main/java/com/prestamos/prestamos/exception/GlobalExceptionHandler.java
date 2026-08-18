@@ -1,7 +1,7 @@
 package com.prestamos.prestamos.exception;
 
-import com.prestamos.prestamos.dto.ApiResponse;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ProblemDetail;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -17,42 +17,46 @@ import java.util.Map;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<ApiResponse<Void>> handleNotFound(ResourceNotFoundException ex) {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                .body(ApiResponse.error(ex.getMessage()));
+    public ProblemDetail handleNotFound(ResourceNotFoundException ex) {
+        ProblemDetail problem = ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, ex.getMessage());
+        problem.setProperty("timestamp", LocalDateTime.now());
+        return problem;
     }
 
     @ExceptionHandler(DuplicateResourceException.class)
-    public ResponseEntity<ApiResponse<Void>> handleDuplicate(DuplicateResourceException ex) {
-        return ResponseEntity.status(HttpStatus.CONFLICT)
-                .body(ApiResponse.error(ex.getMessage()));
+    public ProblemDetail handleDuplicate(DuplicateResourceException ex) {
+        ProblemDetail problem = ProblemDetail.forStatusAndDetail(HttpStatus.CONFLICT, ex.getMessage());
+        problem.setProperty("timestamp", LocalDateTime.now());
+        return problem;
     }
 
     @ExceptionHandler(BusinessRuleException.class)
-    public ResponseEntity<ApiResponse<Void>> handleBusinessRule(BusinessRuleException ex) {
-        return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY)
-                .body(ApiResponse.error(ex.getMessage()));
+    public ProblemDetail handleBusinessRule(BusinessRuleException ex) {
+        ProblemDetail problem = ProblemDetail.forStatusAndDetail(HttpStatus.UNPROCESSABLE_ENTITY, ex.getMessage());
+        problem.setProperty("timestamp", LocalDateTime.now());
+        return problem;
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<ApiResponse<Map<String, String>>> handleValidation(MethodArgumentNotValidException ex) {
+    public ProblemDetail handleValidation(MethodArgumentNotValidException ex) {
         Map<String, String> errors = new HashMap<>();
         List<FieldError> fieldErrors = ex.getBindingResult().getFieldErrors();
         for (FieldError fieldError : fieldErrors) {
             errors.put(fieldError.getField(), fieldError.getDefaultMessage());
         }
-        ApiResponse<Map<String, String>> body = ApiResponse.<Map<String, String>>builder()
-                .success(false)
-                .message("Error de validación en los datos enviados")
-                .data(errors)
-                .timestamp(LocalDateTime.now())
-                .build();
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(body);
+        ProblemDetail problem = ProblemDetail.forStatusAndDetail(
+                HttpStatus.BAD_REQUEST, "Error de validación en los datos enviados");
+        problem.setProperty("timestamp", LocalDateTime.now());
+        problem.setProperty("errors", errors);
+        return problem;
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ApiResponse<Void>> handleGeneric(Exception ex) {
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(ApiResponse.error("Error interno del servidor: " + ex.getMessage()));
+    public ProblemDetail handleGeneric(Exception ex) {
+        ProblemDetail problem = ProblemDetail.forStatusAndDetail(
+                HttpStatus.INTERNAL_SERVER_ERROR,
+                "Error interno del servidor: " + ex.getMessage());
+        problem.setProperty("timestamp", LocalDateTime.now());
+        return problem;
     }
 }

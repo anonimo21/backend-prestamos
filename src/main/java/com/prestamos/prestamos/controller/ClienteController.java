@@ -1,6 +1,5 @@
 package com.prestamos.prestamos.controller;
 
-import com.prestamos.prestamos.dto.ApiResponse;
 import com.prestamos.prestamos.dto.ClienteRequestDTO;
 import com.prestamos.prestamos.dto.ClienteResponseDTO;
 import com.prestamos.prestamos.service.IClienteService;
@@ -25,36 +24,35 @@ public class ClienteController {
     }
 
     @GetMapping
-    public ResponseEntity<ApiResponse<List<ClienteResponseDTO>>> listar(
+    public ResponseEntity<List<ClienteResponseDTO>> listar(
             @RequestParam(name = "buscar", required = false) String buscar) {
         List<ClienteResponseDTO> clientes = clienteService.buscarPorFiltro(buscar);
-        return ResponseEntity.ok(ApiResponse.ok(clientes, "Clientes recuperados exitosamente"));
+        return ResponseEntity.ok(clientes);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ApiResponse<ClienteResponseDTO>> obtenerPorId(@PathVariable("id") Long id) {
+    public ResponseEntity<ClienteResponseDTO> obtenerPorId(@PathVariable("id") Long id) {
         ClienteResponseDTO cliente = clienteService.obtenerPorId(id);
-        return ResponseEntity.ok(ApiResponse.ok(cliente, "Cliente encontrado"));
+        return ResponseEntity.ok(cliente);
     }
 
     @PostMapping
-    public ResponseEntity<ApiResponse<ClienteResponseDTO>> crear(@Valid @RequestBody ClienteRequestDTO dto) {
+    public ResponseEntity<ClienteResponseDTO> crear(@Valid @RequestBody ClienteRequestDTO dto) {
         ClienteResponseDTO nuevoCliente = clienteService.crear(dto);
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(ApiResponse.created(nuevoCliente, "Cliente creado exitosamente"));
+        return ResponseEntity.status(HttpStatus.CREATED).body(nuevoCliente);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ApiResponse<ClienteResponseDTO>> actualizar(
+    public ResponseEntity<ClienteResponseDTO> actualizar(
             @PathVariable("id") Long id,
             @Valid @RequestBody ClienteRequestDTO dto) {
         ClienteResponseDTO actualizado = clienteService.actualizar(id, dto);
-        return ResponseEntity.ok(ApiResponse.ok(actualizado, "Cliente actualizado exitosamente"));
+        return ResponseEntity.ok(actualizado);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<ApiResponse<Void>> eliminar(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> eliminar(@PathVariable("id") Long id) {
         clienteService.eliminar(id);
-        return ResponseEntity.ok(ApiResponse.ok(null, "Cliente eliminado exitosamente"));
+        return ResponseEntity.ok().build();
     }
 }

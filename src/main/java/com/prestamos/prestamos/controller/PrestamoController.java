@@ -1,7 +1,8 @@
 package com.prestamos.prestamos.controller;
 
 import com.prestamos.prestamos.domain.EstadoPrestamo;
-import com.prestamos.prestamos.dto.*;
+import com.prestamos.prestamos.dto.PrestamoRequestDTO;
+import com.prestamos.prestamos.dto.PrestamoResponseDTO;
 import com.prestamos.prestamos.service.IPrestamoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ public class PrestamoController {
     }
 
     @GetMapping
-    public ResponseEntity<ApiResponse<List<PrestamoResponseDTO>>> listar(
+    public ResponseEntity<List<PrestamoResponseDTO>> listar(
             @RequestParam(name = "estado", required = false) EstadoPrestamo estado) {
         List<PrestamoResponseDTO> prestamos;
         if (estado != null) {
@@ -31,33 +32,32 @@ public class PrestamoController {
         } else {
             prestamos = prestamoService.listarTodos();
         }
-        return ResponseEntity.ok(ApiResponse.ok(prestamos, "Lista de préstamos recuperada"));
+        return ResponseEntity.ok(prestamos);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ApiResponse<PrestamoResponseDTO>> obtenerPorId(@PathVariable("id") Long id) {
+    public ResponseEntity<PrestamoResponseDTO> obtenerPorId(@PathVariable("id") Long id) {
         PrestamoResponseDTO prestamo = prestamoService.obtenerPorId(id);
-        return ResponseEntity.ok(ApiResponse.ok(prestamo, "Detalle del préstamo obtenido"));
+        return ResponseEntity.ok(prestamo);
     }
 
     @PostMapping
-    public ResponseEntity<ApiResponse<PrestamoResponseDTO>> crear(@Valid @RequestBody PrestamoRequestDTO dto) {
+    public ResponseEntity<PrestamoResponseDTO> crear(@Valid @RequestBody PrestamoRequestDTO dto) {
         PrestamoResponseDTO prestamo = prestamoService.crear(dto);
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(ApiResponse.created(prestamo, "Préstamo creado exitosamente"));
+        return ResponseEntity.status(HttpStatus.CREATED).body(prestamo);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ApiResponse<PrestamoResponseDTO>> actualizar(
+    public ResponseEntity<PrestamoResponseDTO> actualizar(
             @PathVariable("id") Long id,
             @Valid @RequestBody PrestamoRequestDTO dto) {
         PrestamoResponseDTO prestamo = prestamoService.actualizar(id, dto);
-        return ResponseEntity.ok(ApiResponse.ok(prestamo, "Préstamo actualizado exitosamente"));
+        return ResponseEntity.ok(prestamo);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<ApiResponse<Void>> eliminar(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> eliminar(@PathVariable("id") Long id) {
         prestamoService.eliminar(id);
-        return ResponseEntity.ok(ApiResponse.ok(null, "Préstamo eliminado exitosamente"));
+        return ResponseEntity.ok().build();
     }
 }
