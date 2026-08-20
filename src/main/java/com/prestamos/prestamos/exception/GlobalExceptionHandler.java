@@ -2,6 +2,9 @@ package com.prestamos.prestamos.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -25,9 +28,6 @@ public class GlobalExceptionHandler {
 
     /**
      * Maneja {@link ResourceNotFoundException} y devuelve HTTP 404.
-     *
-     * @param ex excepción lanzada cuando un recurso no existe.
-     * @return detalle del problema con el mensaje original.
      */
     @ExceptionHandler(ResourceNotFoundException.class)
     public ProblemDetail handleNotFound(ResourceNotFoundException ex) {
@@ -38,12 +38,6 @@ public class GlobalExceptionHandler {
 
     /**
      * Maneja {@link DuplicateResourceException} y devuelve HTTP 409.
-     *
-     * <p>Se usa, por ejemplo, cuando se intenta crear un cliente con
-     * una identificación que ya existe.</p>
-     *
-     * @param ex excepción lanzada por un conflicto de unicidad.
-     * @return detalle del problema con el mensaje original.
      */
     @ExceptionHandler(DuplicateResourceException.class)
     public ProblemDetail handleDuplicate(DuplicateResourceException ex) {
@@ -54,9 +48,6 @@ public class GlobalExceptionHandler {
 
     /**
      * Maneja {@link BusinessRuleException} y devuelve HTTP 422.
-     *
-     * @param ex excepción lanzada por una regla de negocio violada.
-     * @return detalle del problema con el mensaje original.
      */
     @ExceptionHandler(BusinessRuleException.class)
     public ProblemDetail handleBusinessRule(BusinessRuleException ex) {
@@ -67,13 +58,6 @@ public class GlobalExceptionHandler {
 
     /**
      * Maneja errores de validación de Bean Validation en {@code @RequestBody}.
-     *
-     * <p>Recorre los errores de campo y los devuelve como un mapa
-     * {@code campo → mensaje} bajo la propiedad {@code errors}.</p>
-     *
-     * @param ex excepción generada por Spring cuando alguna restricción
-     *           {@code @NotBlank}, {@code @Email}, etc. falla.
-     * @return detalle del problema con el detalle y los errores por campo.
      */
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ProblemDetail handleValidation(MethodArgumentNotValidException ex) {
@@ -90,14 +74,18 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * Manejador comodín para cualquier excepción no capturada por los
-     * handlers anteriores.
-     *
-     * <p>Devuelve HTTP 500 con un mensaje genérico que incluye el detalle
-     * de la excepción para no perder información útil en el log.</p>
-     *
-     * @param ex excepción inesperada.
-     * @return detalle del problema con código 500.
+     * Maneja intentos autenticados que no cuentan con el rol requerido.
+     */
+    @ExceptionHandler(AccessDeniedException.class)
+    public ProblemDetail handleAccessDenied(AccessDeniedException ex) {
+        ProblemDetail problem = ProblemDetail.forStatusAndDetail(
+                HttpStatus.FORBIDDEN, "No tienes permisos para realizar esta acción");
+        problem.setProperty("timestamp", LocalDateTime.now());
+        return problem;
+    }
+
+    /**
+     * Manejador comodín para cualquier excepción no capturada por los handlers anteriores.
      */
     @ExceptionHandler(Exception.class)
     public ProblemDetail handleGeneric(Exception ex) {

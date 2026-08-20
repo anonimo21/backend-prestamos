@@ -28,6 +28,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/api/v1/prestamos")
+@CrossOrigin(origins = "http://localhost:5173")
 @Tag(name = "Préstamos", description = "Operaciones para gestionar préstamos: alta, consulta, actualización y eliminación.")
 public class PrestamoController { 
 

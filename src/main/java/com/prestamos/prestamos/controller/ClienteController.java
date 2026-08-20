@@ -14,6 +14,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,7 +27,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/api/v1/clientes")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:5173")
 @Tag(name = "Clientes", description = "Operaciones CRUD para la gestión de clientes.")
 public class ClienteController {
 
@@ -53,6 +54,7 @@ public class ClienteController {
             content = @Content(mediaType = "application/json",
                     schema = @Schema(implementation = ClienteResponseDTO.class)))
     @GetMapping
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<List<ClienteResponseDTO>> listar(
             @Parameter(description = "Texto opcional para filtrar por nombre, apellido o identificación.",
                     example = "juan")
@@ -75,6 +77,7 @@ public class ClienteController {
                     content = @Content)
     })
     @GetMapping("/{id}")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<ClienteResponseDTO> obtenerPorId(
             @Parameter(description = "Identificador del cliente.", example = "1")
             @PathVariable("id") Long id) {
@@ -99,6 +102,7 @@ public class ClienteController {
                     content = @Content)
     })
     @PostMapping
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseEntity<ClienteResponseDTO> crear(
             @io.swagger.v3.oas.annotations.parameters.RequestBody(
                     description = "Datos del cliente a crear.",
@@ -128,6 +132,7 @@ public class ClienteController {
                     content = @Content)
     })
     @PutMapping("/{id}")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseEntity<ClienteResponseDTO> actualizar(
             @Parameter(description = "Identificador del cliente a actualizar.", example = "1")
             @PathVariable("id") Long id,
@@ -155,6 +160,7 @@ public class ClienteController {
                     content = @Content)
     })
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseEntity<Void> eliminar(
             @Parameter(description = "Identificador del cliente a eliminar.", example = "1")
             @PathVariable("id") Long id) {
